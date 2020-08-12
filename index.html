@@ -1,78 +1,260 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Gabriel Godefroy's Webpage</title>
-		<style type="text/css">
-			body{margin:40px auto;
-			max-width:650px;
-			line-height:1.6;font-size:18px;color:#444;
-			padding:0 10px}
-			h1,h2,h3{line-height:1.2}
-			em {color: red}
-		</style>
-	</head>
 
-	<body>
-		<header><h1> Hi, I'm Gabriel!</h1>
-			<aside> I am a geologist by education, interested in computer sciences and uncertainty modelling. </aside>
-		</header>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gabriel Godefroy's Webpage</title>
+	<style type="text/css">
+		body {
+			margin: 40px auto;
+			max-width: 800px;
+			line-height: 1.6;
+			font-size: 18px;
+			color: #444;
+			padding: 0 10px
+		}
 
-		<p> <p>
+		h1,
+		h2,
+		h3 {
+			line-height: 1.2
+		}
 
-				If you want to know about what I have done in the past, you can have a look at my
-		<a href="https://www.linkedin.com/in/gabriel-godefroy-1b2b7779/"> Linkedin</a> page.
-		My <a href="https://www.researchgate.net/profile/Gabriel_Godefroy2"> Research Gate</a> and
-			<a href="https://scholar.google.com/citations?user=RF6jza0AAAAJ&hl=en"> Google Scholar</a> 
-		pages keep track of my publications for me. 
+		em {
+			color: red
+		}
+	</style>
 
-		<p> <p>
 
-		When I am not in front of a computer, playing badminton, or cooking something, 
-		I like to be outside and take photographies. Have a look at my 
-				<a href="https://www.instagram.com/gabrielisoninsta/"> Instagram</a> page!
+<style>     
 
-		<p>
 
-		<!-- I should add my github, a CV and a bibtex-->
-
-<em> I am currently seeking to another experience in the field of software development. 
-		 <a href="cv/2020-07-01-cv.pdf" download alt="CV-download" style="color:red">  Click here to download my CV! </a>
-</em>
-
-<table style="width:70%" align="center">
-  <tr>
-	<td>
-		<a href="https://www.linkedin.com/in/gabriel-godefroy-1b2b7779/">
-			<img src="logo/linkedin.png"  width=50px border=0 alt="Linkedin"/>
-		</a>	
-	</td>
-	<td>
-		<a href="https://scholar.google.com/citations?user=RF6jza0AAAAJ&hl=en">
-			<img src="logo/scholar.png"  width=50px border=0 alt="GoogleScholar"/>
-		</a>
-	</td> 
-	<td>
-		<a href="https://www.researchgate.net/profile/Gabriel_Godefroy2">
-			<img src="logo/rg.png"  width=50px border=0 alt="ResearchGate"/>
-		</a>
-	</td>
-	<td>
-		<a href="https://www.instagram.com/gabrielisoninsta/">
-			<img src="logo/insta.png"  width=50px border=0 alt="Instagram"/>
-		</a>
-	</td>
-	<td>
-		<a href="https://www.flickr.com/photos/164376539@N03">
-			<img src="logo/flickr.png"  width=50px border=0 alt="Flickr"/>
-		</a>
-	</td>
-  </tr>
-</table>
+	.basic-grid {
+		display: grid;
+		gap: 1rem;
 	
+		/* 1 too skinny, too much code */
+		/* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+	  
+		/* 2 cleaner code */
+		/* grid-template-columns: repeat(12, 1fr); */
+	  
+		/* 3  better sizing, but overflows */
+		/* grid-template-columns: repeat(12, minmax(240px, 1fr)); */
+	  
+		/* 4 final */
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	 }
+	 
+	 .photo-grid {
+	  display: grid;
+	  gap: 1rem;
+	
+	  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	  grid-auto-rows: 240px;
+	}
+	
+	/* Medium screens */
+	@media screen and (min-width: 600px) {
+	  .card-tall {
+		grid-row: span 2 / auto;
+	  }
+	
+	  .card-wide {
+		grid-column: span 2 / auto;
+	  }
+	}
+	
+	
+	.card {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		background: #353535;
+		font-size: 1.4rem;
+		color: #fff;
+		box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+		transition: all 500ms;
+		overflow: hidden;
+		
+	
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		text-decoration: none;
+		
+		
+	 }
+	  
+	.card:hover {
+		box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+		transform: translateY(-3px) scale(1.02);
+	 }
+		</style>
+
+
+</head>
+
+<body>
+	<header>
+		<h1> Hi, I'm Gabriel!</h1>
+		<aside> I am a curious lad, interested in computer sciences and uncertainty modelling.  </aside>
+	</header>
+
+	<p>
+	
+	<p>  I have got a PhD in geosciences; 
+		<a href="https://www.researchgate.net/profile/Gabriel_Godefroy2"> Research Gate</a> and
+		<a href="https://scholar.google.com/citations?user=RF6jza0AAAAJ&hl=en"> Google Scholar</a>
+		keep track of my publications.  
+Don't be shy and feel free to contact me on <a href="https://www.linkedin.com/in/gabriel-godefroy-1b2b7779/"> LinkedIn</a> to collaborate on a project. <p>
+
+	<p>
 
 
 
-				</body>
+
+	<p>
+	<p>
+
+		When I am not in front of a computer, playing badminton, or cooking something,
+		I like to be outside and take photographies. Have a look at my
+		<a href="https://www.instagram.com/gabrielisoninsta/"> Instagram</a> page!
+		
+	<p>
+
+		<!--
+		<em> I am currently seeking to another experience in the field of software development.
+			<a href="cv/2020-07-01-cv.pdf" download alt="CV-download" style="color:red"> Click here to download my CV!
+			</a>
+		</em> -->
+
+	<table style="width:70%" align="center">
+		<tr>
+			<td>
+				<a href="https://www.linkedin.com/in/gabriel-godefroy-1b2b7779/">
+					<img src="logo/linkedin.png" width=50px border=0 alt="Linkedin" />
+				</a>
+			</td>
+			<td>
+				<a href="https://scholar.google.com/citations?user=RF6jza0AAAAJ&hl=en">
+					<img src="logo/scholar.png" width=50px border=0 alt="GoogleScholar" />
+				</a>
+			</td>
+			<td>
+				<a href="https://www.researchgate.net/profile/Gabriel_Godefroy2">
+					<img src="logo/rg.png" width=50px border=0 alt="ResearchGate" />
+				</a>
+			</td>
+			<td>
+				<a href="https://www.instagram.com/gabrielisoninsta/">
+					<img src="logo/insta.png" width=50px border=0 alt="Instagram" />
+				</a>
+			</td>
+			<td>
+				<a href="https://www.flickr.com/photos/164376539@N03">
+					<img src="logo/flickr.png" width=50px border=0 alt="Flickr" />
+				</a>
+			</td>
+		</tr>
+	</table>
+
+	<hr>
+
+	<h2 style="text-align:center"> Here are some online projects </h2>
+
+
+	
+	
+	<section class="photo-grid"> 
+        <a  href="https://gabrielgodefroy.github.io/photographie/" download alt="My website dedicated to digital photography"
+		class="card card card"
+        style="background-image:url('img/DSC_0306.JPEG');"
+	  >  A website dedicated to digital photography (in French) </a>
+	  
+	
+	  <a  href="cv/2020-07-01-cv.pdf" download alt="CV-download"
+        class="card card-tall"
+        style="background-image:url('https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80')"
+      >
+	  Download my CV here
+</a>
+      <a href="http://www.ring-team.org/model_3d_html/atlas.html"
+        class="card"
+        style="background-image:url('img/ListricFaultModel.png')"
+      >
+        Synthetic 3D geological models rendered using Three.JS
+	</a>
+
+	<a href="www.theses.fr/2018LORR0052/document"
+        class="card"
+        style="background-image:url('img/ListricFaultModel.png')"
+      >
+        Download my PhD manuscript
+	</a>
+
+	<a href="https://todo"
+        class="card"
+        style="background-image:url('img/imgtoimg.JPEG')"
+      >
+        TODO, create a mosaic of img
+	</a>
+
+      <a href="https://gabrielgodefroy.github.io/StochasticInterpData/Fig4/Fig4.html"
+        class="card card-wide"
+        style="background-image:url('img/ListricFaultModel.png')"
+      >
+        Visualize alternative geological interpretations
+	</a>
+
+
+
+	  <!-- TODO 
+      <div
+
+
+        class="card"
+        style="background-image:url('https://images.unsplash.com/photo-1583426573939-97d09302d76a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80')"
+      >
+        4
+      </div>
+      <div
+        class="card"
+        style="background-image:url('https://images.unsplash.com/photo-1583532452513-a02186582ccd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')"
+      >
+        5
+      </div>
+      <div
+        class="card"
+        style="background-image:url('https://images.unsplash.com/photo-1583445013765-46c20c4a6772?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')"
+      >
+        6
+      </div>
+      <div
+        class="card card-wide"
+        style="background-image:url('https://images.unsplash.com/photo-1583562835057-a62d1beffbf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=949&q=80')"
+      >
+        7
+      </div>
+      <div
+        class="card"
+        style="background-image:url('https://images.unsplash.com/photo-1583483425010-c566431a7710?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80')"
+      >
+        8
+      </div>
+      <div
+        class="card"
+        style="background-image:url('https://images.unsplash.com/photo-1583500557349-fb5238f8d946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80')"
+      >
+        9
+      </div>
+	  -->
+
+
+</body>
+
 </html>
